@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from "prop-types"
 
 class App extends React.Component {
-  state = { //바꿀 테이터
+  state = { //바꿀 데이터
     count: 0
   };
   add = () => {
-    console.log("add");
-   };
-  minus = () => { 
-    console.log("minus");
+    this.setState(current => ({ count: current.count +1 }));
+  };
+  minus = () => { //setState 할때마다 react는 새로운 state와 함께 reder fun을 호출함.
+    this.setState(current => ({ count: current.count -1 }));
   };
   render() {
     return (
